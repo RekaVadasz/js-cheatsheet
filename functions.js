@@ -1,4 +1,12 @@
 //FÜGGVÉNYEK LÉTERHOZÁSA
+
+function multiply(number1, number2) { // létrehozom a függvényt, 2 paramétere lesz 
+    return number1 * number2;   // return: a 2 paraméter összeszorzott eredménye
+  }
+  
+console.log(multiply(3,5)) //függvény meghívása, amikor adok neki 2 argumentumot
+
+
 console.log(aFunction1()) //ez is működik, ha előtte íratom ki a függvényt, bár nem annyira logikus (hoisting of functions: a function már korábban elérhető, mint hogy létrehoztuk)
 function aFunction1() {
     //ez a függvény belseje
@@ -14,11 +22,7 @@ const aFunction2 = function() {
 console.log(aFunction2()) //minden változóba mentett dolog(függvény is lehet) értékéhez csak a változó létrehozása utáni sorokban férünk hozzá
 
 
-function multiply(number1, number2) { // létrehozom a függvényt, 2 paramétere lesz 
-    return number1 * number2;   // return: a 2 paraméter összeszorzott eredménye
-  }
-  
-console.log(multiply(3,5)) //függvény meghívása, amikor adok neki 2 argumentumot
+
 
 for (const item of arr) {
     console.log(item)

@@ -20,15 +20,41 @@ console.log(otherFruits);
 otherFruits.unshift("Lemon")
 console.log(otherFruits)
 
-//Meerkat feladat
-const meerkatParts = ["tail", "body", "head"];
-function fixTheMeerkat(arr) { //ennek egyszerűbb megoldása: arr.reverse();
-    let front = arr[0];
-    let back = arr[2];
-    arr.pop();
-    arr.shift();
-    arr.push(front);
-    arr.unshift(back);
-    return arr;
-   }
-console.log(fixTheMeerkat(meerkatParts))
+//.LENGTH (property)
+const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+console.log(cars.length) //megszámolja, hány elemnből áll a tömb (6)
+
+//.FOREACH(); 
+// a tömb minden elemére lefuttat egy függvényt
+
+//2 DIMENSIONAL ARRAYS
+const arr1 = [
+    [111,  4, -5, -9,  3 ],
+    [ 6, -4, -7,  4, -5 ],
+    [ 3,  5,  0, -9, -1 ],
+    [ 1,  5, -7, -8, -9 ],
+    [-3,  2,  1, -5,  6 ]
+  ];
+
+const arr2 = [
+    [-1, 4, -5, -9, 3],
+    [6, 8, -7, 4, -5],
+    [3, 5, 1, -9, -1],
+    [1, 5, -7, 15, -9],
+    [-3, 2, 1, -5, -6]
+];
+
+function matrix(array) { //changes values on the diagonal of the array
+    for (let i = 0; i < array.length; i++) {
+        if (array[i][i] < 0) {
+            array[i][i] = 0;
+        } else {
+            array[i][i] = 1;
+        }
+    }
+    return array;
+}
+
+console.log(matrix(arr1));
+
+

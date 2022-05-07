@@ -10,7 +10,7 @@ const args = [34, 15, 88, 2]
 function findSmallestInt() {
     let min = Infinity;
     for(let i = 0; i < arguments.length; i++){ //végigmegy a tömb összes elemén 
-      if (arguments[i] < min) { //megcizsgálja minden elemnél, hogy fennáll-e az adott feltétel
+      if (arguments[i] < min) { //megVizsgálja minden elemnél, hogy fennáll-e az adott feltétel
         min = arguments[i] // ha igen, akkor ezt végrehajtja (min változó értékét megváltoztatja az éppen aktuális tömb elemére)
       }
     }
@@ -42,3 +42,6 @@ const loadEvent = function (){ //változóba mentett függvény, így használha
     }
     rootElement.insertAdjacentHTML("beforeend", beerDiv) //argumentumok: (position, egy olyan string amit html-é tud konvertálni). Minden ciklus lefutásakor beilleszt egy újabb divet a html záró tag elé
 }
+
+//FOR... OF
+
