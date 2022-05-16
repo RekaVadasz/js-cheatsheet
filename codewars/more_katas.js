@@ -78,3 +78,21 @@ function positiveSum(arr) { //arrow functions are used below
 }
 
 console.log(positiveSum(arr14))
+
+
+
+
+//Return negative
+
+function makeNegative(num) {
+    if (num <= 0)  {
+        return num;
+    } else {
+        return 0 - num;
+    }    
+}
+
+function makeNegativeShort(num) { //same as above but with conditional (ternary) operator
+    return (num <=0) ?  num : 0 - num; //same as if... else statement
+}
+console.log(makeNegativeShort(-2))

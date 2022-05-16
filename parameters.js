@@ -13,7 +13,7 @@ arguments: the real values passed to (and received by) the function.
     - we can give default values
 */
 
-function myFunction(x, y = 2) { // y parameter is given 2 ad default value
+function myFunction(x, y = 2) { // y parameter is given 2 as default value
     // function code
   }
 

@@ -60,3 +60,9 @@ console.log(detectSex({
     name:"Penelope",
     sex:"female2"
 }));
+
+//conditional (ternary) operator
+function makeNegativeShort(num) { //same as above but with conditional (ternary) operator
+    return (num <=0) ?  num : 0 - num; //same as if... else statement: return the negative of a number
+}
+console.log(makeNegativeShort(-2)) 
