@@ -1,31 +1,37 @@
-//.POP()
+//-----------------.pop()
 // leveszi a tömb utolsó elemét 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.pop();
 console.log(fruits);
 
-//.PUSH()
+
+//-------------------.push()
 //új elemet ad a tömbhöz (az ultosó helyre)
 fruits.push("Kiwi");
 console.log(fruits);
 
-//.SHIFT
+
+//-------------.shift
 //leveszi a tömb legelső elemét, így minden elem eggyel alacsonyabb indexűvé válik
 const otherFruits = ["Banana", "Orange", "Apple", "Mango"];
 otherFruits.shift();
 console.log(otherFruits);
 
-//.UNSHIFT
+
+//-----------.unshift
 //új elemet ad a tömb elejére, minden meglévő elem indexe eggyel eltolódik
 otherFruits.unshift("Lemon")
 console.log(otherFruits)
 
-//.LENGTH (property)
+//-------------.length (property)
 const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
 console.log(cars.length) //megszámolja, hány elemnből áll a tömb (6)
 
-//.FOREACH(); 
+
+//------------------.forEach.(); 
 // a tömb minden elemére lefuttat egy függvényt
+
+
 
 //2 DIMENSIONAL ARRAYS
 const arr1 = [
@@ -54,52 +60,103 @@ function matrix(array) { //changes values on the diagonal of the array
     }
     return array;
 }
-
 console.log(matrix(arr1));
 
-//.filter()
+
+//-----------------.filter()------------------
+//creates a new array filled with elements that pass a test provided by a function.
+
+const flock = [true,  true,  true,  false, // true means sheep is present, have to count them
+    true,  true,  true,  true ,
+    true,  false, true,  false,
+    true,  false, false, true ,
+    true,  true,  true,  true ,
+    false, false, true,  true];
+
+function countSheeps(arrayOfSheeps) {
+    let presentSheep = arrayOfSheeps.filter(checkIfPresent); // or: .filter(Boolean): null and undefined can be handled, if not "truthy", removed
+    function checkIfPresent (sheep) {
+        return sheep === true;
+    }
+    return presentSheep.length;
+    }
+
+console.log(countSheeps(flock));
 
 
-//.reduce()
 
 
 
+//------------------.reduce()
 
-//exam task 
-const user1 = {
-    id: 3242342,
-    username: "belakovacs12",
-    email: "bela@gmail.com",
-    phone: "701231231",
-    isConfirmed: true
+
+
+//---------------- .reverse(), .join() ----------------
+let newStr = "world"; //we want to reverse this string
+function solution(str){
+  const array = [];
+  for (let i = 0; i < str.length; i++) {
+      array.push(str.slice(i, i + 1));
   }
-  
-const user2 = {
-    id: 2136523,
-    username: "lajosnagy",
-    email: "lajos@gmail.com",
-    phone: "303214321",
-    isConfirmed: true
-  }
+  const newArray = array.reverse(); //.reverse(): megfordítja egy tömb elemeinek sorrendjét
+  console.log(newArray);
+  return newArray.join(""); 
 
-const user3 = {
-    id: 8743534,
-    username: "akarki99",
-    email: "kazmer@gmail.com",
-    phone: "206546547",
-    isConfirmed: false
 }
 
-const userList = [user1, user2, user3];
 
-function getUserIdentifiers(users) {
-    const userIds = [];
-    for (let user of users) {
-        let name = user.username;
-        let id = user.id;
-        userIds.push(name + "@" + id);
+
+//-------------------.join() ----------------
+//egy tömb elemeit stringgé kapcsolja össze. Default: vesszővel van elválasztva, de bármi megadható. Pl. (" and ")
+const inputWords = ['hello', 'world', 'this', 'is', 'great'];
+function smash (words) {
+    return words.join(" ");
+};
+
+
+
+//------------ find() --------------
+//the find() method returns the value of the first element that passes a test (executes a function for each array element.)
+const ages = [3, 10, 18, 20];
+console.log(ages.find(checkAge));
+function checkAge(age) {
+    return age > 18;
+}
+
+
+//-------------- .indexOf()--------------
+//returns the first index (position) of a specified value.
+const stack1 = ['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'];
+function findNeedle1(haystack) {
+    return `found the needle at position ${haystack.indexOf("needle")}`
+}
+console.log(findNeedle1(stack1))
+
+
+//------------- .findIndex()------------------
+//returns the index (position) of the first element that passes a test. executes a function for each array element. 
+
+const stack2 = ['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'];
+function findNeedle2(haystack) {
+    let position = haystack.findIndex(findStuff);
+    function findStuff(element){ // "element": item of the array, can have any name
+        return element === "needle";
     }
-    return userIds;    
+    return `found the needle at position ${position}`
   }
 
-console.log(getUserIdentifiers(userList))
+  console.log(findNeedle2(stack2))
+
+
+//---------- .map()------------------
+// creates a new array from calling a function for every array element.
+
+const numberArray = [1, 2, 3]
+  function maps(x){
+    const newArr = x.map( item => item * 2); //item: array item, can have any name, argument of the function passed to .map() method
+    return newArr;
+}
+console.log(maps(numberArray))
+
+//---------------- .sort ----------------
+let sorted = [...arr].sort(function(a, b){return a-b}); // új tömböt hoz létre, és nem az eredetit mutálja így a sort method
