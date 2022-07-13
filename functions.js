@@ -1,4 +1,4 @@
-//FÜGGVÉNYEK LÉTERHOZÁSA
+//---------- FÜGGVÉNYEK LÉTERHOZÁSA -----------
 
 function multiply(number1, number2) { // létrehozom a függvényt, 2 paramétere lesz 
     return number1 * number2;   // return: a 2 paraméter összeszorzott eredménye
@@ -61,8 +61,36 @@ console.log(detectSex({
     sex:"female2"
 }));
 
-//conditional (ternary) operator
+//-------- conditional (ternary) operator -----------
+
 function makeNegativeShort(num) { //same as above but with conditional (ternary) operator
     return (num <=0) ?  num : 0 - num; //same as if... else statement: return the negative of a number
 }
 console.log(makeNegativeShort(-2)) 
+
+
+//------ Arrow functions ------------
+
+function sum (a, b) {
+    return a + b
+}
+
+let sum2 = (a, b) => a + b
+//function keyword is not needed, has to be saved in a variable
+// return keyword is not needed 
+// {} are not needed, all in one line
+
+function isPositive (number) {
+    return number >= 0
+}
+
+let isPositive2 = number => number >= 0
+// () can be removed is only one argument is present
+
+let randomNumber = () => Math.random
+//arrow function with no argument
+
+document.addEventListener("click", () => console.log("Clicked"))
+//anonym function as arrow function
+
+//.this is different in a normal function than in an arrow function (scope is not redefined when you use an arrow function)

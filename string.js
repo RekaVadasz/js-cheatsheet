@@ -30,7 +30,16 @@ function getSiteName(url) {
 
 console.log(getSiteName(sN))
 
+
+
+
+//-------------.repeat()-----------------
 //String ismétlése n alkalommal
+
+let someText = "Hello world!";
+let repeatResult = text.repeat(4);
+
+//ugyanez for ciklussal: 
 function repeatStr (n, s) {
     let output = "";
     for (let index = 0; index < n; index++) {
