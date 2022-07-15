@@ -38,7 +38,7 @@ const currentDate2 = function (){
 
 
 
-// ----------- get current date as string with hours and mins (yyyy-mm-dd)------------
+// ----------- get current date as string with hours and mins (yyyy-mm-dd hh:mi)------------
 
 const currentDate3 = function (){
    let today = new Date();
@@ -67,3 +67,13 @@ const currentDate3 = function (){
 }
 
 console.log(currentDate3())
+
+
+//------ get current day of the week --------
+
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const d = new Date();
+let day = weekday[d.getDay()];
+
+console.log(day)
